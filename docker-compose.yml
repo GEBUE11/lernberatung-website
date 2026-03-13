@@ -13,7 +13,7 @@ services:
       # HTTPS-Router
       - "traefik.http.routers.lernberatung.rule=Host(`srv825520.hstgr.cloud`)"
       - "traefik.http.routers.lernberatung.entrypoints=websecure"
-      - "traefik.http.routers.lernberatung.tls.certresolver=myresolver"
+      - "traefik.http.routers.lernberatung.tls.certresolver=mytlschallenge"
       - "traefik.http.services.lernberatung.loadbalancer.server.port=80"
       # HTTP → HTTPS Weiterleitung
       - "traefik.http.routers.lernberatung-http.rule=Host(`srv825520.hstgr.cloud`)"
