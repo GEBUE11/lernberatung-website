@@ -3,25 +3,26 @@ services:
   nginx:
     image: nginx:alpine
     container_name: lernberatung-nginx
-    ports:
-      - "8080:80"
-      - "8443:443"
     volumes:
       - ./:/usr/share/nginx/html:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
-      - certbot-www:/var/www/certbot:ro
-      - certbot-certs:/etc/letsencrypt:ro
     restart: unless-stopped
+    labels:
+      # Traefik aktivieren
+      - "traefik.enable=true"
+      # HTTPS-Router
+      - "traefik.http.routers.lernberatung.rule=Host(`lernberatung-buechner.de`) || Host(`www.lernberatung-buechner.de`)"
+      - "traefik.http.routers.lernberatung.entrypoints=websecure"
+      - "traefik.http.routers.lernberatung.tls.certresolver=myresolver"
+      - "traefik.http.services.lernberatung.loadbalancer.server.port=80"
+      # HTTP → HTTPS Weiterleitung
+      - "traefik.http.routers.lernberatung-http.rule=Host(`lernberatung-buechner.de`) || Host(`www.lernberatung-buechner.de`)"
+      - "traefik.http.routers.lernberatung-http.entrypoints=web"
+      - "traefik.http.routers.lernberatung-http.middlewares=lernberatung-https"
+      - "traefik.http.middlewares.lernberatung-https.redirectscheme.scheme=https"
+    networks:
+      - traefik
 
-  certbot:
-    image: certbot/certbot
-    container_name: lernberatung-certbot
-    volumes:
-      - certbot-www:/var/www/certbot
-      - certbot-certs:/etc/letsencrypt
-    # Zertifikat automatisch alle 12h erneuern
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --quiet; sleep 12h & wait $${!}; done;'"
-
-volumes:
-  certbot-www:
-  certbot-certs:
+networks:
+  traefik:
+    external: true
