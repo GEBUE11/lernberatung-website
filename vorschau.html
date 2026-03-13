@@ -15,13 +15,12 @@
 
   <style>
     :root {
-      --blau-dunkel:  #1a3a5c;
-      --blau-mittel:  #2a5298;
-      --blau-hell:    #e8f0fb;
-      --orange:       #e07b39;
-      --orange-hell:  #fdf0e6;
-      --grau-hell:    #f5f6f8;
-      --text-dunkel:  #2c3e50;
+      --blau-dunkel:  #023047;
+      --blau-mittel:  #219ebc;
+      --orange:       #fb8500;
+      --grau-hell:    #f5f7f8;
+      --grau-mittel:  #e8edf0;
+      --text-dunkel:  #1a2e3a;
     }
 
     body {
@@ -43,16 +42,19 @@
       font-size: 1rem;
       line-height: 1.3;
       color: #fff !important;
+      display: flex;
+      align-items: center;
     }
     .navbar-brand .brand-name {
-      font-size: 1.15rem;
+      font-size: 1.45rem;
       font-weight: 800;
       display: block;
+      letter-spacing: -0.3px;
     }
     .navbar-brand .brand-sub {
-      font-size: 0.72rem;
+      font-size: 0.82rem;
       font-weight: 400;
-      opacity: 0.85;
+      opacity: 0.82;
       display: block;
     }
     .navbar-toggler {
@@ -76,23 +78,18 @@
       border-radius: 20px !important;
       padding: 0.4rem 1.1rem !important;
     }
-    .nav-cta:hover { background-color: #c9692a !important; }
+    .nav-cta:hover {
+      background-color: #e07600 !important;
+      color: #fff !important;
+    }
 
     /* ── HERO ────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--blau-dunkel) 0%, #234b7a 100%);
-      padding: 5rem 0 4rem;
+      background: linear-gradient(135deg, #012a3d 0%, #064e75 45%, #0d7a9c 100%);
+      padding: 5rem 0 5rem;
       color: #fff;
       position: relative;
       overflow: hidden;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0; right: 0;
-      height: 60px;
-      background: #fff;
-      clip-path: ellipse(55% 100% at 50% 100%);
     }
     .hero h1 {
       font-size: 2.4rem;
@@ -118,24 +115,17 @@
       align-items: center;
       justify-content: center;
     }
-    .hero-img .brain-placeholder {
-      width: 260px;
-      height: 260px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      border: 2px dashed rgba(255,255,255,0.3);
+    .hero-img .logo-circle {
+      width: 340px;
+      height: 340px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 5rem;
-      color: rgba(255,255,255,0.5);
     }
-    .hero-img .brain-placeholder small {
-      font-size: 0.75rem;
-      font-family: 'Nunito', sans-serif;
-      margin-top: 0.5rem;
-      opacity: 0.7;
+    .hero-img .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     .btn-hero {
       background-color: var(--orange);
@@ -148,7 +138,7 @@
       transition: transform 0.15s, background 0.15s;
     }
     .btn-hero:hover {
-      background-color: #c9692a;
+      background-color: #e07600;
       color: #fff;
       transform: translateY(-1px);
     }
@@ -189,23 +179,28 @@
 
     /* ── PROBLEM KARTEN ──────────────────────────── */
     .section-problem { background-color: var(--grau-hell); }
+    .section-problem .section-title { color: var(--blau-dunkel); }
+    .section-problem .section-label { color: var(--blau-mittel); }
     .problem-card {
       background: #fff;
       border-radius: 16px;
       padding: 2rem 1.6rem;
       height: 100%;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      border-top: 4px solid var(--blau-mittel);
-      transition: transform 0.2s;
+      box-shadow: 0 2px 16px rgba(2,48,71,0.08);
+      border-top: 4px solid var(--orange);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .problem-card:hover { transform: translateY(-4px); }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(2,48,71,0.13);
+    }
     .problem-card .icon-wrap {
       width: 56px; height: 56px;
-      background: var(--blau-hell);
+      background: #fff3e0;
       border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.6rem;
-      color: var(--blau-mittel);
+      color: var(--orange);
       margin-bottom: 1.1rem;
     }
     .problem-card h4 {
@@ -266,71 +261,95 @@
       background: rgba(255,255,255,0.35);
       color: #fff;
     }
+    /* Orange-Karte: solider weißer Button */
+    .leistung-card.orange .btn-card-white {
+      background: #fff;
+      border-color: #fff;
+      color: var(--orange);
+    }
+    .leistung-card.orange .btn-card-white:hover {
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(255,255,255,0.88);
+      color: var(--orange);
+    }
 
     /* ── METHODEN ────────────────────────────────── */
-    .section-methoden { background: #fff; }
+    .section-methoden {
+      background: var(--blau-dunkel);
+    }
+    .section-methoden .section-title { color: #fff; }
+    .section-methoden .section-label { color: var(--blau-mittel); }
     .methode-item {
       text-align: center;
       padding: 1.5rem 1rem;
     }
     .methode-icon {
       width: 72px; height: 72px;
-      background: var(--blau-hell);
+      background: rgba(255,255,255,0.07);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.8rem;
-      color: var(--blau-mittel);
       margin: 0 auto 0.9rem;
+      border: 2px solid rgba(33,158,188,0.35);
+      transition: background 0.2s;
     }
+    .methode-icon:hover { background: rgba(33,158,188,0.15); }
+    .methode-icon.ico-orange { color: var(--orange); }
+    .methode-icon.ico-blau   { color: var(--blau-mittel); }
     .methode-item h6 {
       font-size: 0.88rem;
       font-weight: 700;
-      color: var(--blau-dunkel);
+      color: #fff;
       margin-bottom: 0.3rem;
     }
     .methode-item small {
       font-size: 0.78rem;
-      color: #6b7280;
+      color: rgba(255,255,255,0.5);
       line-height: 1.4;
       display: block;
     }
 
     /* ── ERGEBNISSE ──────────────────────────────── */
     .section-ergebnisse {
-      background: linear-gradient(135deg, var(--blau-dunkel) 0%, #234b7a 100%);
-      color: #fff;
+      background: var(--grau-hell);
     }
-    .section-ergebnisse .section-title { color: #fff; }
+    .section-ergebnisse .section-title { color: var(--blau-dunkel); }
+    .section-ergebnisse .section-label { color: var(--blau-mittel); }
+    .section-ergebnisse .section-subtitle { color: #6b7280; }
     .ergebnis-item {
-      padding: 1.5rem;
+      padding: 1.8rem 1.5rem;
       border-radius: 14px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: #fff;
+      border: 1px solid var(--grau-mittel);
       height: 100%;
+      box-shadow: 0 2px 12px rgba(2,48,71,0.06);
     }
     .ergebnis-item .e-icon {
       font-size: 2rem;
       margin-bottom: 0.8rem;
-      color: var(--orange);
       display: block;
     }
+    .ergebnis-item .e-icon.ico-orange  { color: var(--orange); }
+    .ergebnis-item .e-icon.ico-blau    { color: var(--blau-mittel); }
+    .ergebnis-item .e-icon.ico-dunkel  { color: var(--blau-dunkel); }
     .ergebnis-item h4 {
       font-size: 1.05rem;
       font-weight: 700;
+      color: var(--blau-dunkel);
       margin-bottom: 0.7rem;
     }
     .ergebnis-item ul {
       padding-left: 1.1rem;
       margin-bottom: 0;
       font-size: 0.9rem;
-      opacity: 0.88;
+      color: #4b5563;
       line-height: 1.8;
     }
 
     /* ── ÜBER MICH ───────────────────────────────── */
     .section-ueber { background: #fff; }
     .ueber-img-placeholder {
-      background: var(--blau-hell);
+      background: #e8f4f8;
       border-radius: 20px;
       width: 100%;
       aspect-ratio: 4/5;
@@ -351,16 +370,17 @@
     .ueber-text p { line-height: 1.75; color: #4b5563; }
     .methoden-tag {
       display: inline-block;
-      background: var(--blau-hell);
-      color: var(--blau-mittel);
+      background: #e8f4f8;
+      color: var(--blau-dunkel);
       border-radius: 20px;
       padding: 0.3rem 0.9rem;
       font-size: 0.82rem;
       font-weight: 600;
       margin: 0.2rem;
+      border: 1px solid rgba(33,158,188,0.3);
     }
     .btn-primary-custom {
-      background-color: var(--blau-mittel);
+      background-color: var(--blau-dunkel);
       border: none;
       color: #fff;
       border-radius: 50px;
@@ -369,7 +389,7 @@
       transition: background 0.15s, transform 0.15s;
     }
     .btn-primary-custom:hover {
-      background-color: var(--blau-dunkel);
+      background-color: var(--blau-mittel);
       color: #fff;
       transform: translateY(-1px);
     }
@@ -382,14 +402,15 @@
     }
     .ziel-icon {
       width: 64px; height: 64px;
-      background: #fff;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.6rem;
-      color: var(--blau-dunkel);
       margin: 0 auto 0.8rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      transition: transform 0.2s;
     }
+    .ziel-icon.ico-orange { background: #fff3e0; color: var(--orange); }
+    .ziel-icon.ico-blau   { background: #e8f4f8; color: var(--blau-mittel); }
+    .ziel-item:hover .ziel-icon { transform: translateY(-3px); }
     .ziel-item span {
       font-size: 0.88rem;
       font-weight: 700;
@@ -399,43 +420,55 @@
 
     /* ── CTA BANNER ──────────────────────────────── */
     .section-cta {
-      background: linear-gradient(135deg, var(--orange) 0%, #c9692a 100%);
+      background: var(--blau-dunkel);
       color: #fff;
       padding: 4rem 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 50%, rgba(33,158,188,0.12) 0%, transparent 70%);
     }
     .section-cta h2 {
       font-size: 2rem;
       font-weight: 800;
       margin-bottom: 0.8rem;
+      position: relative;
     }
     .section-cta p {
       font-size: 1.05rem;
-      opacity: 0.9;
+      opacity: 0.8;
       margin-bottom: 2rem;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
     }
-    .btn-cta-white {
-      background: #fff;
-      color: var(--orange);
+    .btn-cta-orange {
+      background: var(--orange);
+      color: #fff;
       border: none;
       border-radius: 50px;
-      padding: 0.8rem 2.5rem;
+      padding: 0.9rem 2.8rem;
       font-weight: 800;
       font-size: 1.05rem;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+      position: relative;
     }
-    .btn-cta-white:hover {
+    .btn-cta-orange:hover {
+      background: #e07600;
+      color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      color: var(--orange);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
     }
 
     /* ── FOOTER ──────────────────────────────────── */
     footer {
-      background-color: #1a1a2e;
+      background-color: #011829;
       color: rgba(255,255,255,0.75);
       padding: 3.5rem 0 1.5rem;
       font-size: 0.9rem;
@@ -467,30 +500,14 @@
       text-align: center;
     }
 
-    /* ── HINWEIS-BOX ─────────────────────────────── */
-    .blueprint-hint {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: var(--blau-dunkel);
-      color: #fff;
-      padding: 0.8rem 1.2rem;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-family: 'Nunito', sans-serif;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-      z-index: 9999;
-      max-width: 260px;
-      border-left: 3px solid var(--orange);
-    }
-    .blueprint-hint strong { color: var(--orange); }
+    /* ── SMOOTH SCROLL & NAVBAR-OFFSET ──────────── */
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 1.8rem; }
       .hero { padding: 3rem 0 4rem; }
       .hero-img { margin-top: 2.5rem; }
       .section-title { font-size: 1.5rem; }
-      .blueprint-hint { display: none; }
     }
   </style>
 </head>
@@ -502,21 +519,22 @@
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <span class="brand-name">Andrea Büchner</span>
-      <span class="brand-sub">Lernberatung p.P. · wingwave-Coaching</span>
+      <span>
+        <span class="brand-name">Andrea Büchner</span>
+        <span class="brand-sub">Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching</span>
+      </span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navMenu">
       <ul class="navbar-nav gap-1 align-items-lg-center">
-        <li class="nav-item"><a class="nav-link active" href="#">Startseite</a></li>
-        <li class="nav-item"><a class="nav-link" href="/lernberatung">Lernberatung</a></li>
-        <li class="nav-item"><a class="nav-link" href="/wingwave-coaching">wingwave-Coaching</a></li>
-        <li class="nav-item"><a class="nav-link" href="/schulprojekt">Schulprojekt</a></li>
-        <li class="nav-item"><a class="nav-link" href="/ueber-mich">Über mich</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#start">Start</a></li>
+        <li class="nav-item"><a class="nav-link" href="#leistungen">Angebote</a></li>
+        <li class="nav-item"><a class="nav-link" href="#methoden">Methoden</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ueber-mich">Über mich</a></li>
         <li class="nav-item ms-lg-2">
-          <a class="nav-link nav-cta" href="/kontakt">Kontakt</a>
+          <a class="nav-link nav-cta" href="#kontakt">Kontakt</a>
         </li>
       </ul>
     </div>
@@ -527,7 +545,7 @@
 <!-- ══════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════ -->
-<section class="hero">
+<section class="hero" id="start">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-7">
@@ -540,18 +558,17 @@
           mit wissenschaftlich fundierten Methoden, die ich individuell auf jeden Menschen abstimme.
         </p>
         <div class="d-flex gap-3 flex-wrap mt-4">
-          <a href="/kontakt" class="btn btn-hero">
+          <a href="#kontakt" class="btn btn-hero">
             <i class="bi bi-calendar-check me-2"></i>Erstberatung anfragen
           </a>
-          <a href="/lernberatung" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.4);border-radius:50px;padding:0.75rem 1.6rem;font-weight:600;">
+          <a href="#leistungen" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.4);border-radius:50px;padding:0.75rem 1.6rem;font-weight:600;">
             Mehr erfahren
           </a>
         </div>
       </div>
       <div class="col-lg-5 hero-img">
-        <div class="brain-placeholder">
-          <i class="bi bi-brain"></i>
-          <small>Hier: Logo / Illustration</small>
+        <div class="logo-circle">
+          <img src="assets/logo.gif" alt="Lernberatung Andrea Büchner" />
         </div>
       </div>
     </div>
@@ -612,17 +629,17 @@
 
 
 <!-- ══════════════════════════════════════════════
-     LEISTUNGEN
+     LEISTUNGEN / ANGEBOTE
 ══════════════════════════════════════════════════ -->
-<section style="background:#fff;">
+<section id="leistungen" style="background:#fff;">
   <div class="container">
     <div class="text-center mb-5">
       <span class="section-label">Meine Angebote</span>
       <h2 class="section-title">Leistungen für Sie und Ihre Kinder</h2>
     </div>
     <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="leistung-card blau">
+      <div class="col-lg-4" id="lernberatung">
+        <div class="leistung-card orange">
           <div class="lk-icon"><i class="bi bi-lightbulb-fill"></i></div>
           <h3>Lernberatung</h3>
           <p>
@@ -630,13 +647,13 @@
             durch gezielte Bewegungs- und Energieübungen auf Basis der Gehirnvernetzung
             (BrainGym® nach Dr. Paul Dennison). Mit BioFeedback-System.
           </p>
-          <a href="/lernberatung" class="btn btn-card-white">
-            Mehr erfahren <i class="bi bi-arrow-right ms-1"></i>
+          <a href="#kontakt" class="btn btn-card-white">
+            Beratung anfragen <i class="bi bi-arrow-right ms-1"></i>
           </a>
         </div>
       </div>
-      <div class="col-lg-4">
-        <div class="leistung-card blau-mittel">
+      <div class="col-lg-4" id="wingwave">
+        <div class="leistung-card blau">
           <div class="lk-icon"><i class="bi bi-eye"></i></div>
           <h3>wingwave-Coaching</h3>
           <p>
@@ -644,13 +661,13 @@
             Unsicherheiten. Schnelle, nachhaltige Veränderungen durch Simulation der
             REM-Phase im Wachzustand. Auch als emTrace®-Methode bekannt.
           </p>
-          <a href="/wingwave-coaching" class="btn btn-card-white">
-            Mehr erfahren <i class="bi bi-arrow-right ms-1"></i>
+          <a href="#kontakt" class="btn btn-card-white">
+            Beratung anfragen <i class="bi bi-arrow-right ms-1"></i>
           </a>
         </div>
       </div>
-      <div class="col-lg-4">
-        <div class="leistung-card orange">
+      <div class="col-lg-4" id="schulprojekt">
+        <div class="leistung-card blau-mittel">
           <div class="lk-icon"><i class="bi bi-people-fill"></i></div>
           <h3>Schulprojekt</h3>
           <p>
@@ -658,8 +675,8 @@
             kombiniert aus Kleingruppenarbeit (6–10 Kinder) und individueller
             Einzelförderung. Flexibel buchbar für Schulen.
           </p>
-          <a href="/schulprojekt" class="btn btn-card-white">
-            Mehr erfahren <i class="bi bi-arrow-right ms-1"></i>
+          <a href="#kontakt" class="btn btn-card-white">
+            Beratung anfragen <i class="bi bi-arrow-right ms-1"></i>
           </a>
         </div>
       </div>
@@ -671,7 +688,7 @@
 <!-- ══════════════════════════════════════════════
      METHODEN
 ══════════════════════════════════════════════════ -->
-<section class="section-methoden" style="padding-top:3rem;padding-bottom:3.5rem;">
+<section class="section-methoden" id="methoden" style="padding-top:3rem;padding-bottom:3.5rem;">
   <div class="container">
     <div class="text-center mb-4">
       <span class="section-label">Methoden</span>
@@ -680,35 +697,35 @@
     <div class="row g-0 justify-content-center">
       <div class="col-6 col-md-4 col-lg-2">
         <div class="methode-item">
-          <div class="methode-icon"><i class="bi bi-activity"></i></div>
+          <div class="methode-icon ico-orange"><i class="bi bi-activity"></i></div>
           <h6>BrainGym®</h6>
           <small>nach Dr. Paul Dennison</small>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="methode-item">
-          <div class="methode-icon"><i class="bi bi-eye-fill"></i></div>
+          <div class="methode-icon ico-blau"><i class="bi bi-eye-fill"></i></div>
           <h6>wingwave</h6>
           <small>emTrace® · REM-Technik</small>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="methode-item">
-          <div class="methode-icon"><i class="bi bi-broadcast"></i></div>
+          <div class="methode-icon ico-orange"><i class="bi bi-broadcast"></i></div>
           <h6>Kinesiologie</h6>
           <small>angewandte Kinesiologie</small>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="methode-item">
-          <div class="methode-icon"><i class="bi bi-chat-quote-fill"></i></div>
+          <div class="methode-icon ico-blau"><i class="bi bi-chat-quote-fill"></i></div>
           <h6>NLP</h6>
           <small>Kommunikations&shy;theorie · Watzlawick</small>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="methode-item">
-          <div class="methode-icon"><i class="bi bi-cpu-fill"></i></div>
+          <div class="methode-icon ico-orange"><i class="bi bi-cpu-fill"></i></div>
           <h6>BioFeedback</h6>
           <small>Erkennen von Blockaden</small>
         </div>
@@ -724,16 +741,16 @@
 <section class="section-ergebnisse">
   <div class="container">
     <div class="text-center mb-5">
-      <span class="section-label" style="color:var(--orange);">Was Sie erwartet</span>
+      <span class="section-label">Was Sie erwartet</span>
       <h2 class="section-title">Was Lernberatung bewirkt</h2>
-      <p class="section-subtitle mx-auto" style="color:rgba(255,255,255,0.7);">
+      <p class="section-subtitle mx-auto">
         Oft reichen wenige Sitzungen aus, um deutliche Fortschritte zu sehen.
       </p>
     </div>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="ergebnis-item">
-          <i class="e-icon bi bi-person-check-fill"></i>
+          <i class="e-icon ico-blau bi bi-person-check-fill"></i>
           <h4>Körperlich</h4>
           <ul>
             <li>Bessere Körperwahrnehmung</li>
@@ -745,7 +762,7 @@
       </div>
       <div class="col-md-4">
         <div class="ergebnis-item">
-          <i class="e-icon bi bi-mortarboard-fill"></i>
+          <i class="e-icon ico-orange bi bi-mortarboard-fill"></i>
           <h4>Schulisch &amp; geistig</h4>
           <ul>
             <li>Verbesserte Rechtschreibung (auch bei LRS)</li>
@@ -758,7 +775,7 @@
       </div>
       <div class="col-md-4">
         <div class="ergebnis-item">
-          <i class="e-icon bi bi-heart-fill"></i>
+          <i class="e-icon ico-dunkel bi bi-heart-fill"></i>
           <h4>Persönlichkeit</h4>
           <ul>
             <li>Abbau von Stress und Prüfungsangst</li>
@@ -777,7 +794,7 @@
 <!-- ══════════════════════════════════════════════
      ÜBER MICH
 ══════════════════════════════════════════════════ -->
-<section class="section-ueber">
+<section class="section-ueber" id="ueber-mich">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-4">
@@ -815,8 +832,8 @@
           <span class="methoden-tag">Kinesiologie</span>
           <span class="methoden-tag">BioFeedback</span>
         </div>
-        <a href="/ueber-mich" class="btn btn-primary-custom">
-          <i class="bi bi-person me-2"></i>Mehr über mich
+        <a href="#kontakt" class="btn btn-primary-custom">
+          <i class="bi bi-calendar-check me-2"></i>Erstgespräch anfragen
         </a>
       </div>
     </div>
@@ -836,37 +853,37 @@
     <div class="row g-3 justify-content-center">
       <div class="col-4 col-md-2">
         <div class="ziel-item">
-          <div class="ziel-icon"><i class="bi bi-emoji-smile-fill"></i></div>
+          <div class="ziel-icon ico-orange"><i class="bi bi-emoji-smile-fill"></i></div>
           <span>Kinder</span>
         </div>
       </div>
       <div class="col-4 col-md-2">
         <div class="ziel-item">
-          <div class="ziel-icon"><i class="bi bi-backpack-fill"></i></div>
+          <div class="ziel-icon ico-blau"><i class="bi bi-backpack-fill"></i></div>
           <span>Schüler &amp; Studenten</span>
         </div>
       </div>
       <div class="col-4 col-md-2">
         <div class="ziel-item">
-          <div class="ziel-icon"><i class="bi bi-person-fill"></i></div>
+          <div class="ziel-icon ico-orange"><i class="bi bi-person-fill"></i></div>
           <span>Jugendliche</span>
         </div>
       </div>
       <div class="col-4 col-md-2">
         <div class="ziel-item">
-          <div class="ziel-icon"><i class="bi bi-person-workspace"></i></div>
+          <div class="ziel-icon ico-blau"><i class="bi bi-person-workspace"></i></div>
           <span>Erwachsene</span>
         </div>
       </div>
       <div class="col-4 col-md-2">
         <div class="ziel-item">
-          <div class="ziel-icon"><i class="bi bi-easel-fill"></i></div>
+          <div class="ziel-icon ico-orange"><i class="bi bi-easel-fill"></i></div>
           <span>Lehrer</span>
         </div>
       </div>
       <div class="col-4 col-md-2">
         <div class="ziel-item">
-          <div class="ziel-icon"><i class="bi bi-briefcase-fill"></i></div>
+          <div class="ziel-icon ico-blau"><i class="bi bi-briefcase-fill"></i></div>
           <span>Führungs&shy;kräfte</span>
         </div>
       </div>
@@ -885,20 +902,20 @@
 <!-- ══════════════════════════════════════════════
      CTA BANNER
 ══════════════════════════════════════════════════ -->
-<section class="section-cta">
+<section class="section-cta" id="kontakt">
   <div class="container">
     <h2>Bereit für den ersten Schritt?</h2>
     <p>
       Nehmen Sie Kontakt auf – ich freue mich auf ein erstes Gespräch mit Ihnen
       und Ihrem Kind.
     </p>
-    <a href="/kontakt" class="btn btn-cta-white">
+    <a href="tel:+497256800831" class="btn btn-cta-orange">
       <i class="bi bi-telephone-fill me-2"></i>Jetzt Kontakt aufnehmen
     </a>
     <div class="mt-4" style="opacity:0.85;font-size:0.92rem;">
       <i class="bi bi-geo-alt-fill me-1"></i>
       Andrea Büchner · Mühlweg 22 · 76661 Philippsburg Ot. Rheinsheim ·
-      <strong>0170 33 30 630</strong>
+      <strong>+49 (0) 7256 800831</strong>
     </div>
   </div>
 </section>
@@ -913,26 +930,26 @@
       <div class="col-lg-4 col-md-6">
         <h6>Andrea Büchner</h6>
         <p style="font-size:0.88rem;line-height:1.7;opacity:0.75;">
-          Lernberatung p.P. · wingwave-Coaching<br>
-          Praxis für praktische Pädagogik und Kurzzeit-Coaching
+          Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching
         </p>
         <p style="font-size:0.88rem;opacity:0.75;">
           <i class="bi bi-geo-alt me-1"></i>Mühlweg 22, 76661 Philippsburg Ot. Rheinsheim<br>
-          <i class="bi bi-telephone me-1"></i>0170 33 30 630
+          <i class="bi bi-telephone me-1"></i>+49 (0) 7256 800831
         </p>
       </div>
       <div class="col-lg-2 col-md-6">
-        <h6>Leistungen</h6>
-        <a href="/lernberatung">Lernberatung</a>
-        <a href="/wingwave-coaching">wingwave-Coaching</a>
-        <a href="/schulprojekt">Schulprojekt</a>
+        <h6>Angebote</h6>
+        <a href="#lernberatung">Lernberatung</a>
+        <a href="#wingwave">wingwave-Coaching</a>
+        <a href="#schulprojekt">Schulprojekt</a>
       </div>
       <div class="col-lg-2 col-md-6">
         <h6>Informationen</h6>
-        <a href="/ueber-mich">Über mich</a>
-        <a href="/kontakt">Kontakt</a>
-        <a href="/impressum">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
+        <a href="#methoden">Methoden</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
       <div class="col-lg-4 col-md-6">
         <h6>Zielgruppen</h6>
@@ -945,20 +962,11 @@
     </div>
     <hr class="footer-divider">
     <p class="footer-bottom">
-      &copy; 2025 Andrea Büchner · Lernberatung p.P. · Alle Rechte vorbehalten
+      &copy; 2026 Andrea Büchner · Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching · Alle Rechte vorbehalten
     </p>
   </div>
 </footer>
 
-
-<!-- ══════════════════════════════════════════════
-     HINWEIS-BOX (nur für Blueprint-Ansicht)
-══════════════════════════════════════════════════ -->
-<div class="blueprint-hint">
-  <strong>Blueprint-Vorschau</strong><br>
-  Diese Datei zeigt das Designkonzept. Grau hinterlegte Bereiche (Foto/Logo) mit
-  eigenem Bildmaterial ersetzen.
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
