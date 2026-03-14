@@ -654,7 +654,7 @@
         <li class="nav-item"><a class="nav-link" href="#methoden">Methoden</a></li>
         <li class="nav-item"><a class="nav-link" href="#ueber-mich">Über mich</a></li>
         <li class="nav-item ms-lg-2">
-          <a class="nav-link nav-cta" href="#kontakt">Kontakt</a>
+          <a class="nav-link nav-cta" href="kontakt.html">Kontakt</a>
         </li>
       </ul>
     </div>
@@ -1021,146 +1021,20 @@
 <!-- ══════════════════════════════════════════════
      CTA BANNER
 ══════════════════════════════════════════════════ -->
-<section class="section-cta">
+<section class="section-cta" id="kontakt">
   <div class="container">
     <h2>Bereit für den ersten Schritt?</h2>
     <p>
       Nehmen Sie Kontakt auf – ich freue mich auf ein erstes Gespräch mit Ihnen
       und Ihrem Kind.
     </p>
-    <a href="#kontakt" class="btn btn-cta-orange">
+    <a href="kontakt.html" class="btn btn-cta-orange">
       <i class="bi bi-envelope-fill me-2"></i>Jetzt Anfrage senden
     </a>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════
-     KONTAKT
-══════════════════════════════════════════════════ -->
-<section class="section-kontakt" id="kontakt">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="section-label">Kontakt</span>
-      <h2 class="section-title">So erreichen Sie mich</h2>
-      <p class="section-subtitle mx-auto">
-        Stellen Sie mir Ihre Fragen oder vereinbaren Sie ein unverbindliches Erstgespräch –
-        ich melde mich so schnell wie möglich bei Ihnen.
-      </p>
-    </div>
-
-    <div class="row g-4 align-items-start">
-
-      <!-- ── Linke Spalte: Kontaktdaten ── -->
-      <div class="col-lg-4">
-        <div class="kontakt-box">
-          <h5 class="fw-800 mb-4" style="font-family:'Montserrat',sans-serif;color:var(--blau-dunkel);font-weight:800;">Kontaktdaten</h5>
-
-          <div class="kontakt-info-item">
-            <div class="ki-icon"><i class="bi bi-geo-alt-fill"></i></div>
-            <div class="ki-text">
-              <strong>Adresse</strong>
-              Mühlweg 22<br>76661 Philippsburg Ot. Rheinsheim
-            </div>
-          </div>
-
-          <div class="kontakt-info-item">
-            <div class="ki-icon"><i class="bi bi-telephone-fill"></i></div>
-            <div class="ki-text">
-              <strong>Telefon</strong>
-              <a href="tel:+497256800831" style="color:var(--blau-mittel);font-weight:600;">+49 (0) 7256 800831</a>
-            </div>
-          </div>
-
-          <div class="kontakt-info-item">
-            <div class="ki-icon"><i class="bi bi-envelope-fill"></i></div>
-            <div class="ki-text">
-              <strong>E-Mail</strong>
-              <a href="mailto:kontakt@lernberatung-buechner.de" style="color:var(--blau-mittel);font-weight:600;word-break:break-all;">kontakt@lernberatung-buechner.de</a>
-            </div>
-          </div>
-
-          <hr style="border-color:var(--grau-mittel);margin:1.5rem 0;">
-
-          <p style="font-size:0.88rem;color:#6b7280;margin-bottom:1rem;">
-            Oder schreiben Sie mir direkt per WhatsApp:
-          </p>
-          <a href="https://wa.me/4917033330630?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung%20und%20w%C3%BCrde%20gerne%20mehr%20erfahren."
-             class="btn-whatsapp" target="_blank" rel="noopener">
-            <i class="bi bi-whatsapp"></i> WhatsApp schreiben
-          </a>
-
-          <p style="font-size:0.78rem;color:#9ca3af;margin-top:1rem;margin-bottom:0;">
-            Auf WhatsApp sind Sie direkt mit mir verbunden.
-          </p>
-        </div>
-      </div>
-
-      <!-- ── Rechte Spalte: Formular ── -->
-      <div class="col-lg-8">
-        <div class="kontakt-box">
-          <h5 class="fw-800 mb-4" style="font-family:'Montserrat',sans-serif;color:var(--blau-dunkel);font-weight:800;">Anfrage senden</h5>
-
-          <form action="https://api.web3forms.com/submit" method="POST" id="kontaktFormular">
-
-            <input type="hidden" name="access_key" value="67bfb9a7-a619-4c1e-99e1-86dc4908bf37">
-            <input type="hidden" name="subject" value="Neue Kontaktanfrage – Lernberatung Büchner">
-            <input type="hidden" name="from_name" value="Lernberatung-Büchner.de">
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label for="name" class="form-label">Name *</label>
-                <input type="text" class="form-control" id="name" name="name"
-                       placeholder="Ihr vollständiger Name" required>
-              </div>
-              <div class="col-md-6">
-                <label for="email" class="form-label">E-Mail-Adresse *</label>
-                <input type="email" class="form-control" id="email" name="email"
-                       placeholder="ihre@email.de" required>
-              </div>
-              <div class="col-md-6">
-                <label for="telefon" class="form-label">Telefon (optional)</label>
-                <input type="tel" class="form-control" id="telefon" name="telefon"
-                       placeholder="Ihre Telefonnummer">
-              </div>
-              <div class="col-md-6">
-                <label for="anliegen" class="form-label">Mein Anliegen *</label>
-                <select class="form-select" id="anliegen" name="anliegen" required>
-                  <option value="" disabled selected>Bitte wählen …</option>
-                  <option value="Lernberatung">Lernberatung</option>
-                  <option value="wingwave-Coaching">wingwave-Coaching</option>
-                  <option value="Schulprojekt">Schulprojekt für Schulen</option>
-                  <option value="Sonstiges">Sonstiges / Allgemeine Anfrage</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label for="nachricht" class="form-label">Ihre Nachricht *</label>
-                <textarea class="form-control" id="nachricht" name="nachricht"
-                          rows="5" placeholder="Beschreiben Sie kurz Ihr Anliegen – z. B. um wen es geht, welche Herausforderungen bestehen und wie ich helfen kann." required></textarea>
-              </div>
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="datenschutz" name="datenschutz" required>
-                  <label class="form-check-label" for="datenschutz" style="font-size:0.85rem;color:#4b5563;">
-                    Ich habe die <a href="datenschutz.html" style="color:var(--blau-mittel);">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
-                  </label>
-                </div>
-              </div>
-              <div class="col-12 mt-2">
-                <button type="submit" class="btn btn-submit">
-                  <i class="bi bi-send-fill me-2"></i>Anfrage absenden
-                </button>
-                <p class="mt-2 mb-0" style="font-size:0.8rem;color:#9ca3af;">
-                  * Pflichtfelder · Ich melde mich in der Regel innerhalb von 1–2 Werktagen.
-                </p>
-              </div>
-            </div>
-
-          </form>
-        </div>
-      </div>
-
+    <div class="mt-4" style="opacity:0.85;font-size:0.92rem;position:relative;">
+      <i class="bi bi-geo-alt-fill me-1"></i>
+      Andrea Büchner · Mühlweg 22 · 76661 Philippsburg Ot. Rheinsheim ·
+      <strong>+49 (0) 7256 800831</strong>
     </div>
   </div>
 </section>
@@ -1179,7 +1053,8 @@
         </p>
         <p style="font-size:0.88rem;opacity:0.75;">
           <i class="bi bi-geo-alt me-1"></i>Mühlweg 22, 76661 Philippsburg Ot. Rheinsheim<br>
-          <i class="bi bi-telephone me-1"></i>+49 (0) 7256 800831
+          <i class="bi bi-telephone me-1"></i>+49 (0) 7256 800831<br>
+          <i class="bi bi-envelope me-1"></i>kontakt@lernberatung-buechner.de
         </p>
       </div>
       <div class="col-lg-2 col-md-6">
@@ -1192,7 +1067,7 @@
         <h6>Informationen</h6>
         <a href="#methoden">Methoden</a>
         <a href="#ueber-mich">Über mich</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="kontakt.html">Kontakt</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </div>

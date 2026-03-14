@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vielen Dank – Lernberatung Andrea Büchner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blau-dunkel: #023047;
+      --blau-mittel: #219ebc;
+      --orange:      #fb8500;
+      --grau-hell:   #f5f7f8;
+    }
+    body { font-family: 'Nunito', sans-serif; color: #1a2e3a; }
+    h1, h2, h3, h6, .navbar-brand { font-family: 'Montserrat', sans-serif; }
+    .navbar { background-color: var(--blau-dunkel) !important; padding: 0.9rem 0; }
+    .navbar-brand { font-size: 1rem; line-height: 1.3; color: #fff !important; display: flex; align-items: center; }
+    .navbar-brand .brand-name { font-size: 1.45rem; font-weight: 800; display: block; }
+    .navbar-brand .brand-sub  { font-size: 0.82rem; font-weight: 400; opacity: 0.82; display: block; }
+    footer { background-color: #011829; color: rgba(255,255,255,0.75); padding: 3.5rem 0 1.5rem; font-size: 0.9rem; }
+    footer h6 { color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    footer a { color: rgba(255,255,255,0.65); text-decoration: none; display: block; margin-bottom: 0.4rem; transition: color 0.15s; }
+    footer a:hover { color: var(--orange); }
+    .footer-divider { border-color: rgba(255,255,255,0.1); margin: 2rem 0 1rem; }
+    footer .footer-bottom { font-size: 0.82rem; opacity: 0.55; text-align: center; }
+    .danke-section {
+      background: var(--grau-hell);
+      min-height: calc(100vh - 220px);
+      display: flex;
+      align-items: center;
+      padding: 5rem 0;
+    }
+    .danke-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(2,48,71,0.1);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .danke-icon {
+      width: 80px; height: 80px;
+      background: #e8f8ee;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem;
+      color: #28a745;
+      margin: 0 auto 1.5rem;
+    }
+    .btn-zurueck {
+      background-color: var(--blau-dunkel);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .btn-zurueck:hover { background-color: var(--blau-mittel); color: #fff; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span>
+        <span class="brand-name">Andrea Büchner</span>
+        <span class="brand-sub">Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching</span>
+      </span>
+    </a>
+  </div>
+</nav>
+
+<section class="danke-section">
+  <div class="container">
+    <div class="danke-card">
+      <div class="danke-icon">
+        <i class="bi bi-check-lg"></i>
+      </div>
+      <h1 style="font-size:1.8rem;font-weight:800;color:var(--blau-dunkel);margin-bottom:0.8rem;">
+        Vielen Dank für Ihre Anfrage!
+      </h1>
+      <p style="font-size:1.05rem;color:#4b5563;line-height:1.7;margin-bottom:2rem;">
+        Ihre Nachricht ist bei mir angekommen. Ich melde mich in der Regel
+        innerhalb von <strong>1–2 Werktagen</strong> bei Ihnen.
+      </p>
+      <p style="font-size:0.9rem;color:#6b7280;margin-bottom:2rem;">
+        Falls Sie eine dringende Frage haben, erreichen Sie mich auch telefonisch:
+        <a href="tel:+497256800831" style="color:var(--blau-mittel);font-weight:600;">+49 (0) 7256 800831</a>
+      </p>
+      <a href="index.html" class="btn-zurueck">
+        <i class="bi bi-house-fill me-2"></i>Zurück zur Startseite
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h6>Andrea Büchner</h6>
+        <p style="font-size:0.88rem;line-height:1.7;opacity:0.75;">Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching</p>
+        <p style="font-size:0.88rem;opacity:0.75;">
+          <i class="bi bi-geo-alt me-1"></i>Mühlweg 22, 76661 Philippsburg Ot. Rheinsheim<br>
+          <i class="bi bi-telephone me-1"></i>+49 (0) 7256 800831<br>
+          <i class="bi bi-envelope me-1"></i>kontakt@lernberatung-buechner.de
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Angebote</h6>
+        <a href="index.html#lernberatung">Lernberatung</a>
+        <a href="index.html#wingwave">wingwave-Coaching</a>
+        <a href="index.html#schulprojekt">Schulprojekt</a>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Informationen</h6>
+        <a href="index.html#methoden">Methoden</a>
+        <a href="index.html#ueber-mich">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-bottom">&copy; 2026 Andrea Büchner · Alle Rechte vorbehalten</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
