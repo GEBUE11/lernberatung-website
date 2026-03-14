@@ -348,23 +348,12 @@
 
     /* ── ÜBER MICH ───────────────────────────────── */
     .section-ueber { background: #fff; }
-    .ueber-img-placeholder {
-      background: #e8f4f8;
-      border-radius: 20px;
+    .ueber-foto {
       width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
       aspect-ratio: 4/5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--blau-mittel);
-      font-size: 5rem;
-    }
-    .ueber-img-placeholder small {
-      font-size: 0.8rem;
-      font-family: 'Nunito', sans-serif;
-      margin-top: 0.5rem;
-      opacity: 0.7;
+      box-shadow: 0 8px 32px rgba(2,48,71,0.15);
     }
     .ueber-text h2 { color: var(--blau-dunkel); }
     .ueber-text p { line-height: 1.75; color: #4b5563; }
@@ -798,10 +787,9 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-4">
-        <div class="ueber-img-placeholder">
-          <i class="bi bi-person-circle"></i>
-          <small>Foto Andrea Büchner</small>
-        </div>
+        <img src="assets/AndreaBuechner.jpg"
+             alt="Andrea Büchner – Lernberaterin und wingwave-Coach"
+             class="ueber-foto">
       </div>
       <div class="col-lg-8 ueber-text">
         <span class="section-label">Über mich</span>
