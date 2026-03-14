@@ -256,7 +256,6 @@
             <input type="hidden" name="access_key" value="67bfb9a7-a619-4c1e-99e1-86dc4908bf37">
             <input type="hidden" name="subject" value="Neue Kontaktanfrage – Lernberatung Büchner">
             <input type="hidden" name="from_name" value="Lernberatung-Buechner.de">
-            <input type="hidden" name="redirect" value="https://lernberatung-buechner.de/danke.html">
 
             <div class="row g-3">
               <div class="col-md-6">
@@ -365,5 +364,31 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Wird gesendet …';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(this)
+      });
+      const data = await res.json();
+      if (data.success) {
+        window.location.href = 'danke.html';
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-send-fill me-2"></i>Anfrage absenden';
+        alert('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie direkt an kontakt@lernberatung-buechner.de');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="bi bi-send-fill me-2"></i>Anfrage absenden';
+      alert('Keine Verbindung. Bitte prüfen Sie Ihre Internetverbindung.');
+    }
+  });
+</script>
 </body>
 </html>
