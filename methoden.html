@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methoden – Lernberatung Andrea Büchner | BrainGym, wingwave, Kinesiologie</title>
+  <meta name="description" content="Alle Methoden im Überblick: BrainGym®, wingwave®-Coaching, emTrace®, Kinesiologie, NLP und BioFeedback – wissenschaftlich fundiert, praxiserprobt seit über 20 Jahren.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blau-dunkel:  #023047;
+      --blau-mittel:  #219ebc;
+      --orange:       #fb8500;
+      --grau-hell:    #f5f7f8;
+      --grau-mittel:  #e8edf0;
+      --text-dunkel:  #1a2e3a;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text-dunkel);
+      font-size: 1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6, .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ── NAVBAR ─────────────────────────────────── */
+    .navbar {
+      background-color: var(--blau-dunkel) !important;
+      padding: 0.9rem 0;
+    }
+    .navbar-brand {
+      font-size: 1rem;
+      line-height: 1.3;
+      color: #fff !important;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand .brand-name {
+      font-size: 1.45rem;
+      font-weight: 800;
+      display: block;
+      letter-spacing: -0.3px;
+    }
+    .navbar-brand .brand-sub {
+      font-size: 0.82rem;
+      font-weight: 400;
+      opacity: 0.82;
+      display: block;
+    }
+    .navbar-toggler { border-color: rgba(255,255,255,.3); }
+    .navbar-toggler:focus { box-shadow: none; }
+    .nav-link {
+      color: rgba(255,255,255,.82) !important;
+      font-size: 0.93rem;
+      font-weight: 600;
+      padding: 0.45rem 0.8rem !important;
+      border-radius: 6px;
+      transition: background .18s;
+    }
+    .nav-link:hover, .nav-link.active { background: rgba(255,255,255,.1); color: #fff !important; }
+    .nav-cta {
+      background: var(--orange) !important;
+      color: #fff !important;
+      padding: 0.45rem 1.1rem !important;
+    }
+    .nav-cta:hover { background: #e07200 !important; }
+
+    /* ── PAGE HEADER ─────────────────────────────── */
+    .page-header {
+      background: var(--blau-dunkel);
+      padding: 4rem 0 3rem;
+      text-align: center;
+      color: #fff;
+    }
+    .page-header .label {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      color: #8ecae6;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .page-header p {
+      color: rgba(255,255,255,.72);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── INTRO KARTEN ────────────────────────────── */
+    .intro-cards {
+      background: var(--grau-hell);
+      padding: 3rem 0;
+    }
+    .intro-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 24px;
+      height: 100%;
+      border-top: 4px solid var(--blau-mittel);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      text-align: center;
+    }
+    .intro-card.orange { border-top-color: var(--orange); }
+    .intro-card .ic-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin: 0 auto 16px;
+    }
+    .ic-blau  { background: #e0f4fb; color: var(--blau-mittel); }
+    .ic-orange { background: #fff0e0; color: var(--orange); }
+    .intro-card h5 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .intro-card p { font-size: 0.88rem; color: #556; line-height: 1.65; margin: 0; }
+
+    /* ── METHODE CARD ────────────────────────────── */
+    .methoden-section { padding: 4rem 0; }
+    .methoden-section:nth-child(even) { background: var(--grau-hell); }
+
+    .methode-card {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0 28px;
+      align-items: start;
+    }
+
+    .methode-icon-wrap {
+      width: 72px; height: 72px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .methode-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 8px;
+    }
+    .badge-blau   { background: #e0f4fb; color: var(--blau-mittel); }
+    .badge-orange { background: #fff0e0; color: var(--orange); }
+    .badge-gruen  { background: #e4f7ed; color: #1a7a3f; }
+
+    .methode-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blau-dunkel);
+      margin-bottom: 6px;
+    }
+    .methode-subtitle {
+      color: #7a8fa0;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .methode-text {
+      color: #3a5060;
+      line-height: 1.8;
+      font-size: 0.97rem;
+    }
+    .methode-text + .methode-text { margin-top: 12px; }
+
+    .wirkung-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 576px) { .wirkung-list { grid-template-columns: 1fr; } }
+    .wirkung-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: #3a5060;
+    }
+    .wirkung-list li i { color: var(--orange); margin-top: 2px; flex-shrink: 0; }
+
+    .wirkung-list.blau li i { color: var(--blau-mittel); }
+
+    .methode-box {
+      background: var(--blau-dunkel);
+      color: #fff;
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-top: 24px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      opacity: 0.92;
+    }
+    .methode-box strong { color: #8ecae6; }
+
+    /* ── KOMBINIERT-SECTION ──────────────────────── */
+    .kombi-section {
+      background: var(--blau-dunkel);
+      padding: 4rem 0;
+      color: #fff;
+    }
+    .kombi-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .kombi-section p { color: rgba(255,255,255,.75); line-height: 1.8; }
+    .kombi-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.1);
+      color: #8ecae6;
+      border-radius: 50px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin: 4px 3px;
+    }
+
+    /* ── CTA ─────────────────────────────────────── */
+    .cta-section {
+      padding: 4rem 0;
+      text-align: center;
+      background: var(--grau-hell);
+    }
+    .cta-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-section p { color: #556; max-width: 520px; margin: 0 auto 28px; line-height: 1.7; }
+    .btn-primary-custom {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 13px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s;
+    }
+    .btn-primary-custom:hover { background: #e07200; color: #fff; }
+    .btn-outline-custom {
+      background: transparent;
+      color: var(--blau-dunkel);
+      border: 2px solid var(--blau-dunkel);
+      padding: 11px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+    }
+    .btn-outline-custom:hover { background: var(--blau-dunkel); color: #fff; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      background: var(--blau-dunkel);
+      color: rgba(255,255,255,.7);
+      padding: 3rem 0 1.5rem;
+      font-size: 0.88rem;
+    }
+    footer h6 { color: #fff; font-weight: 700; margin-bottom: 14px; font-size: 0.92rem; }
+    footer a { color: rgba(255,255,255,.65); text-decoration: none; display: block; margin-bottom: 6px; }
+    footer a:hover { color: #fff; }
+    .footer-divider { border-color: rgba(255,255,255,.12); margin: 1.5rem 0 1rem; }
+    .footer-bottom { font-size: 0.8rem; opacity: .5; text-align: center; }
+
+    /* ── WHATSAPP FLOAT ──────────────────────────── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 58px; height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(37,211,102,.45);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); color: #fff; }
+    .whatsapp-float-tooltip {
+      position: absolute;
+      right: 68px;
+      background: #1a2e3a;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .whatsapp-float:hover .whatsapp-float-tooltip { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .methode-card { grid-template-columns: 1fr; }
+      .methode-icon-wrap { margin-bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════ -->
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span>
+        <span class="brand-name">Andrea Büchner</span>
+        <span class="brand-sub">Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#leistungen">Angebote</a></li>
+        <li class="nav-item"><a class="nav-link active" href="methoden.html">Methoden</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#ueber-mich">Über mich</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="nav-link nav-cta" href="kontakt.html">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE HEADER
+══════════════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="container">
+    <span class="label">Methoden &amp; Ansätze</span>
+    <h1>Wie Veränderung wirklich gelingt</h1>
+    <p>
+      Jeder Mensch lernt anders. Andrea Büchner kombiniert bewährte Methoden
+      individuell – abgestimmt auf Alter, Situation und Ziel jedes einzelnen Menschen.
+    </p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     INTRO: 3 GRUNDPRINZIPIEN
+══════════════════════════════════════════════════ -->
+<div class="intro-cards">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="intro-card">
+          <div class="ic-icon ic-blau"><i class="bi bi-person-check-fill"></i></div>
+          <h5>Ganzheitlich</h5>
+          <p>Lernen ist nicht nur Kopfsache. Körper, Emotionen und Umfeld spielen eine entscheidende Rolle – dieser Zusammenhang steht im Mittelpunkt jeder Sitzung.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="intro-card orange">
+          <div class="ic-icon ic-orange"><i class="bi bi-bullseye"></i></div>
+          <h5>Individuell</h5>
+          <p>Keine zwei Menschen haben dieselben Blockaden. Die Methoden werden gezielt kombiniert – je nachdem was gebraucht wird, nicht nach Schema F.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="intro-card">
+          <div class="ic-icon ic-blau"><i class="bi bi-graph-up-arrow"></i></div>
+          <h5>Nachhaltig</h5>
+          <p>Das Ziel ist keine kurzfristige Verbesserung, sondern dauerhafte Veränderung – durch das Lösen von Ursachen, nicht das Bekämpfen von Symptomen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     METHODE 1: BRAINGYM
+══════════════════════════════════════════════════ -->
+<section class="methoden-section">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6">
+        <div class="methode-card">
+          <div class="methode-icon-wrap" style="background:#fff0e0; color:var(--orange);">
+            <i class="bi bi-activity"></i>
+          </div>
+          <div>
+            <span class="methode-badge badge-orange">Bewegung &amp; Gehirn</span>
+            <h2 class="methode-title">BrainGym®</h2>
+            <p class="methode-subtitle">Educational Kinesiology nach Dr. Paul E. Dennison</p>
+            <p class="methode-text">
+              BrainGym® ist ein Programm aus gezielten Bewegungsübungen, das die Zusammenarbeit
+              beider Gehirnhälften fördert. Entwickelt von Dr. Paul E. Dennison in den 1970er Jahren,
+              verbindet es Erkenntnisse aus der Kinesiologie, Neurologie und Lernforschung.
+            </p>
+            <p class="methode-text">
+              Bestimmte Bewegungsabläufe aktivieren Verbindungen zwischen dem motorischen und
+              kognitiven Bereich des Gehirns. Das verbessert Koordination, Konzentration und
+              die Informationsverarbeitung – besonders hilfreich beim Lesen, Schreiben und
+              bei der Verarbeitung von Stress.
+            </p>
+            <ul class="wirkung-list">
+              <li><i class="bi bi-check-circle-fill"></i>Konzentration &amp; Aufmerksamkeit</li>
+              <li><i class="bi bi-check-circle-fill"></i>Lese- und Schreibfluss</li>
+              <li><i class="bi bi-check-circle-fill"></i>Koordination und Motorik</li>
+              <li><i class="bi bi-check-circle-fill"></i>Abbau von Lernstress</li>
+              <li><i class="bi bi-check-circle-fill"></i>Gedächtnis und Merkfähigkeit</li>
+              <li><i class="bi bi-check-circle-fill"></i>Selbstorganisation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div style="background:var(--grau-hell); border-radius:16px; padding:28px;">
+          <h5 style="font-weight:700; margin-bottom:14px;">Wie eine Sitzung aussieht</h5>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8;">
+            Zu Beginn wird gemeinsam ein Lernziel festgelegt. Dann zeigt Andrea Büchner
+            eine Abfolge einfacher Bewegungsübungen – die PACE-Sequenz – die Körper und
+            Gehirn in einen optimalen Lernzustand bringen. Je nach Bedarf werden spezifische
+            Übungen ergänzt.
+          </p>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8; margin-top:12px;">
+            BrainGym® funktioniert für alle Altersgruppen. Viele der Übungen können
+            selbstständig zuhause weitergeführt werden.
+          </p>
+          <div class="methode-box" style="margin-top:20px;">
+            <strong>Geeignet für:</strong><br>
+            Kinder mit LRS oder Konzentrationsproblemen · Schüler vor Prüfungen ·
+            Erwachsene mit stressbedingten Lernblockaden
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     METHODE 2: WINGWAVE
+══════════════════════════════════════════════════ -->
+<section class="methoden-section">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6 order-lg-2">
+        <div class="methode-card">
+          <div class="methode-icon-wrap" style="background:#e0f4fb; color:var(--blau-mittel);">
+            <i class="bi bi-eye-fill"></i>
+          </div>
+          <div>
+            <span class="methode-badge badge-blau">Kurzzeit-Coaching</span>
+            <h2 class="methode-title">wingwave®-Coaching</h2>
+            <p class="methode-subtitle">inkl. emTrace® · Emotionscoaching mit REM-Technik</p>
+            <p class="methode-text">
+              wingwave® ist eine wissenschaftlich begleitete Kurzzeit-Coaching-Methode,
+              die emotionale Belastungen gezielt auflöst. Kern der Methode ist eine bilaterale
+              Stimulation – ähnlich der Augenbewegung im REM-Schlaf – die das Verarbeiten
+              belastender Erlebnisse und Emotionen unterstützt.
+            </p>
+            <p class="methode-text">
+              Durch den integrierten Muskeltest (O-Ring-Test) lässt sich präzise herausfinden,
+              welche Themen und Auslöser im Körper noch aktiv sind – und was genau bearbeitet
+              werden sollte.
+            </p>
+            <ul class="wirkung-list blau">
+              <li><i class="bi bi-check-circle-fill"></i>Prüfungsangst auflösen</li>
+              <li><i class="bi bi-check-circle-fill"></i>Leistungsdruck reduzieren</li>
+              <li><i class="bi bi-check-circle-fill"></i>Emotionale Blockaden lösen</li>
+              <li><i class="bi bi-check-circle-fill"></i>Selbstvertrauen stärken</li>
+              <li><i class="bi bi-check-circle-fill"></i>Stress verarbeiten</li>
+              <li><i class="bi bi-check-circle-fill"></i>Kreativität freisetzen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div style="background:var(--grau-hell); border-radius:16px; padding:28px;">
+          <h5 style="font-weight:700; margin-bottom:14px;">emTrace® – Emotionen erspüren und verändern</h5>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8;">
+            emTrace® ist ein Teil des wingwave®-Coachings und arbeitet gezielt mit
+            emotionalen Reaktionsmustern. Dabei werden Situationen, die Stress oder
+            Angst auslösen, präzise identifiziert und durch Coaching-Interventionen
+            nachhaltig verändert.
+          </p>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8; margin-top:12px;">
+            Oft reichen wenige Sitzungen, um spürbare Veränderungen zu erzielen –
+            das macht wingwave® besonders effizient für Menschen mit konkreten
+            Themen wie Prüfungsangst oder Versagensangst.
+          </p>
+          <div class="methode-box" style="margin-top:20px;">
+            <strong>Geeignet für:</strong><br>
+            Jugendliche und Erwachsene mit Prüfungsangst · Führungskräfte unter Druck ·
+            Menschen mit emotionalen Blockaden im Berufs- oder Lernalltag
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     METHODE 3: KINESIOLOGIE
+══════════════════════════════════════════════════ -->
+<section class="methoden-section">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6">
+        <div class="methode-card">
+          <div class="methode-icon-wrap" style="background:#fff0e0; color:var(--orange);">
+            <i class="bi bi-broadcast"></i>
+          </div>
+          <div>
+            <span class="methode-badge badge-orange">Körper &amp; Energie</span>
+            <h2 class="methode-title">Angewandte Kinesiologie</h2>
+            <p class="methode-subtitle">Muskeltest als Diagnoseinstrument</p>
+            <p class="methode-text">
+              Die angewandte Kinesiologie nutzt den Muskeltest als Feedback-System des Körpers.
+              Der Körper reagiert auf Stress, Blockaden und Informationen mit messbaren
+              Veränderungen im Muskeltonus – das lässt sich gezielt nutzen, um herauszufinden,
+              wo ein Mensch Unterstützung braucht.
+            </p>
+            <p class="methode-text">
+              In der Lernberatung wird die Kinesiologie eingesetzt, um zu verstehen,
+              welche Themen, Situationen oder Lernbereiche Stress auslösen – und um
+              gezielt Maßnahmen ableiten zu können.
+            </p>
+            <ul class="wirkung-list">
+              <li><i class="bi bi-check-circle-fill"></i>Blockaden aufspüren</li>
+              <li><i class="bi bi-check-circle-fill"></i>Stressauslöser identifizieren</li>
+              <li><i class="bi bi-check-circle-fill"></i>Energiebalance fördern</li>
+              <li><i class="bi bi-check-circle-fill"></i>Individuelle Ansätze finden</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div style="background:var(--grau-hell); border-radius:16px; padding:28px; height:100%;">
+          <h5 style="font-weight:700; margin-bottom:14px;">BioFeedback-System</h5>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8;">
+            Ergänzend zur Kinesiologie setzt Andrea Büchner ein BioFeedback-System ein.
+            Damit lassen sich physiologische Reaktionen des Körpers sichtbar machen –
+            etwa Veränderungen in der Muskelspannung oder im Energiezustand.
+          </p>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8; margin-top:12px;">
+            Dieses Instrument macht für Klienten direkt spürbar und nachvollziehbar,
+            wie ihr Körper auf bestimmte Themen reagiert. Das erhöht das Bewusstsein
+            und erleichtert die Arbeit an tieferliegenden Blockaden.
+          </p>
+          <div class="methode-box" style="margin-top:20px;">
+            <strong>Geeignet für:</strong><br>
+            Kinder und Erwachsene, bei denen Blockaden schwer in Worte zu fassen sind ·
+            Ergänzend zu allen anderen Methoden
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     METHODE 4: NLP & KOMMUNIKATION
+══════════════════════════════════════════════════ -->
+<section class="methoden-section">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6 order-lg-2">
+        <div class="methode-card">
+          <div class="methode-icon-wrap" style="background:#e0f4fb; color:var(--blau-mittel);">
+            <i class="bi bi-chat-quote-fill"></i>
+          </div>
+          <div>
+            <span class="methode-badge badge-blau">Kommunikation &amp; Sprache</span>
+            <h2 class="methode-title">NLP</h2>
+            <p class="methode-subtitle">Neuro-Linguistisches Programmieren &amp; Kommunikationstheorie</p>
+            <p class="methode-text">
+              NLP beschäftigt sich damit, wie Sprache, Denken und Verhalten zusammenhängen.
+              Überzeugungen wie „Ich bin einfach schlecht in Mathe" oder „Ich schaffe das nie"
+              hinterlassen Spuren – im Selbstbild, im Verhalten und letztlich in den Ergebnissen.
+            </p>
+            <p class="methode-text">
+              Mit NLP-Techniken werden hinderliche Glaubenssätze und Muster erkannt und
+              gezielt umgeformt. Das schafft neue Handlungsspielräume – besonders in
+              Lern- und Leistungssituationen.
+            </p>
+            <ul class="wirkung-list blau">
+              <li><i class="bi bi-check-circle-fill"></i>Glaubenssätze verändern</li>
+              <li><i class="bi bi-check-circle-fill"></i>Selbstbild stärken</li>
+              <li><i class="bi bi-check-circle-fill"></i>Kommunikation verbessern</li>
+              <li><i class="bi bi-check-circle-fill"></i>Ziele klar definieren</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div style="background:var(--grau-hell); border-radius:16px; padding:28px; height:100%;">
+          <h5 style="font-weight:700; margin-bottom:14px;">Kommunikationstheorie nach Watzlawick</h5>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8;">
+            „Man kann nicht nicht kommunizieren" – dieser Grundsatz von Paul Watzlawick
+            prägt die Arbeit von Andrea Büchner. Viele Lernprobleme haben ihre Wurzeln
+            in Kommunikationsmustern: zwischen Eltern und Kind, zwischen Lehrern und
+            Schülern, oder im inneren Dialog eines Menschen mit sich selbst.
+          </p>
+          <p style="font-size:0.9rem; color:#556; line-height:1.8; margin-top:12px;">
+            Das Verständnis dieser Muster hilft dabei, Missverständnisse aufzulösen,
+            Druck zu reduzieren und eine förderliche Lernumgebung zu schaffen.
+          </p>
+          <div class="methode-box" style="margin-top:20px;">
+            <strong>Geeignet für:</strong><br>
+            Eltern, die ihr Kind besser unterstützen möchten · Menschen mit
+            negativem Selbstbild im Lernen · Führungskräfte und Lehrer
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     KOMBINATION: DAS ZUSAMMENSPIEL
+══════════════════════════════════════════════════ -->
+<section class="kombi-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="methode-badge badge-blau" style="margin-bottom:16px;">Das Besondere</span>
+        <h2>Keine Methode steht allein</h2>
+        <p style="margin-bottom:20px;">
+          Was Andrea Büchner von einem rein methodischen Ansatz unterscheidet:
+          Die Methoden werden nicht isoliert angewendet, sondern gezielt kombiniert –
+          je nachdem, was der Mensch in diesem Moment braucht.
+        </p>
+        <p>
+          Eine Sitzung kann BrainGym®-Übungen beinhalten, die mit einem kinesiologischen
+          Test abgestimmt und durch wingwave®-Coaching emotional vertieft werden.
+          Dieses integrative Vorgehen führt zu schnelleren und nachhaltigeren Ergebnissen.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <div style="background:rgba(255,255,255,.06); border-radius:16px; padding:28px;">
+          <p style="font-size:0.88rem; color:rgba(255,255,255,.6); margin-bottom:16px; font-weight:600; letter-spacing:1px; text-transform:uppercase;">Eingesetzte Methoden</p>
+          <div>
+            <span class="kombi-tag">BrainGym®</span>
+            <span class="kombi-tag">wingwave®</span>
+            <span class="kombi-tag">emTrace®</span>
+            <span class="kombi-tag">Kinesiologie</span>
+            <span class="kombi-tag">BioFeedback</span>
+            <span class="kombi-tag">NLP</span>
+            <span class="kombi-tag">Kommunikationstheorie</span>
+            <span class="kombi-tag">Gehirnforschung</span>
+          </div>
+          <p style="font-size:0.82rem; color:rgba(255,255,255,.45); margin-top:20px; line-height:1.6;">
+            Alle Methoden werden im Rahmen einer pädagogischen Beratung eingesetzt.
+            Die Lernberatung ersetzt keine medizinische oder therapeutische Behandlung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     CTA
+══════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Neugierig geworden?</h2>
+    <p>
+      In einem kostenfreien Erstgespräch besprechen wir gemeinsam, welche Methoden
+      für Ihre Situation am besten geeignet sind.
+    </p>
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+      <a href="kontakt.html" class="btn-primary-custom">
+        <i class="bi bi-calendar-check me-2"></i>Termin vereinbaren
+      </a>
+      <a href="index.html#leistungen" class="btn-outline-custom">
+        Alle Angebote ansehen
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h6>Andrea Büchner</h6>
+        <p style="font-size:0.88rem;line-height:1.7;opacity:0.75;">
+          Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching
+        </p>
+        <p style="font-size:0.88rem;opacity:0.75;">
+          <i class="bi bi-geo-alt me-1"></i>Mühlweg 22, 76661 Philippsburg Ot. Rheinsheim<br>
+          <i class="bi bi-telephone me-1"></i>+49 (0) 7256 800831<br>
+          <i class="bi bi-envelope me-1"></i>kontakt@lernberatung-buechner.de
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Angebote</h6>
+        <a href="index.html#lernberatung">Lernberatung</a>
+        <a href="index.html#wingwave">wingwave-Coaching</a>
+        <a href="index.html#schulprojekt">Schulprojekt</a>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Informationen</h6>
+        <a href="methoden.html">Methoden</a>
+        <a href="index.html#ueber-mich">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h6>Zielgruppen</h6>
+        <p style="font-size:0.85rem;opacity:0.7;line-height:1.9;">
+          LRS / Legasthenie · Dyskalkulie ·
+          Konzentrationsprobleme · Prüfungsangst ·
+          Verhaltensauffälligkeiten · Emotionale Blockaden
+        </p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-bottom">
+      &copy; 2026 Andrea Büchner · Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching · Alle Rechte vorbehalten
+    </p>
+  </div>
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/491703330630?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung%20und%20w%C3%BCrde%20gerne%20mehr%20erfahren."
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp schreiben">
+  <span class="whatsapp-float-tooltip">WhatsApp schreiben</span>
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
