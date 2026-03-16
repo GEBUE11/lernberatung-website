@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Häufige Fragen – Lernberatung Andrea Büchner | Philippsburg</title>
+  <meta name="description" content="Antworten auf die häufigsten Fragen zur Lernberatung: Kosten, Dauer, Alter, Krankenkasse, Unterschied zu Nachhilfe und mehr.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blau-dunkel:  #023047;
+      --blau-mittel:  #219ebc;
+      --orange:       #fb8500;
+      --grau-hell:    #f5f7f8;
+      --text-dunkel:  #1a2e3a;
+    }
+
+    body { font-family: 'Nunito', sans-serif; color: var(--text-dunkel); font-size: 1rem; }
+    h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: 'Montserrat', sans-serif; }
+
+    /* ── NAVBAR ─────────────────────────────────── */
+    .navbar { background-color: var(--blau-dunkel) !important; padding: 0.9rem 0; }
+    .navbar-brand { font-size: 1rem; line-height: 1.3; color: #fff !important; display: flex; align-items: center; }
+    .navbar-brand .brand-name { font-size: 1.45rem; font-weight: 800; display: block; letter-spacing: -0.3px; }
+    .navbar-brand .brand-sub  { font-size: 0.82rem; font-weight: 400; opacity: 0.82; display: block; }
+    .navbar-toggler { border-color: rgba(255,255,255,.3); }
+    .navbar-toggler:focus { box-shadow: none; }
+    .nav-link { color: rgba(255,255,255,.82) !important; font-size: 0.93rem; font-weight: 600; padding: 0.45rem 0.8rem !important; border-radius: 6px; transition: background .18s; }
+    .nav-link:hover, .nav-link.active { background: rgba(255,255,255,.1); color: #fff !important; }
+    .nav-cta { background: var(--orange) !important; color: #fff !important; padding: 0.45rem 1.1rem !important; }
+    .nav-cta:hover { background: #e07200 !important; }
+
+    /* ── PAGE HEADER ─────────────────────────────── */
+    .page-header {
+      background: var(--blau-dunkel);
+      padding: 4rem 0 3rem;
+      text-align: center;
+      color: #fff;
+    }
+    .page-header .label {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      color: #8ecae6;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .page-header h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 14px; }
+    .page-header p  { color: rgba(255,255,255,.72); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-section { padding: 4rem 0; }
+
+    .faq-category-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--grau-hell);
+    }
+
+    .accordion-item {
+      border: 1px solid #e2eaf0;
+      border-radius: 12px !important;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blau-dunkel);
+      background: #fff;
+      padding: 1.1rem 1.4rem;
+      box-shadow: none !important;
+    }
+    .accordion-button:not(.collapsed) {
+      color: var(--blau-dunkel);
+      background: #f0f8fc;
+      border-bottom: 1px solid #e2eaf0;
+    }
+    .accordion-button::after {
+      filter: none;
+    }
+    .accordion-button:not(.collapsed)::after {
+      filter: none;
+    }
+    .accordion-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #374151;
+      padding: 1.2rem 1.4rem;
+      background: #fff;
+    }
+    .accordion-body ul {
+      padding-left: 1.3rem;
+      margin: 10px 0 0;
+    }
+    .accordion-body li { margin-bottom: 4px; }
+    .accordion-body a { color: var(--blau-mittel); }
+    .accordion-body a:hover { color: var(--orange); }
+
+    .faq-hint {
+      background: #f0f8fc;
+      border-left: 4px solid var(--blau-mittel);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: #3a5060;
+      margin-top: 10px;
+    }
+    .faq-hint i { color: var(--blau-mittel); margin-right: 6px; }
+
+    /* ── SIDEBAR ─────────────────────────────────── */
+    .sidebar-card {
+      background: var(--blau-dunkel);
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+    }
+    .sidebar-card h5 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+    .sidebar-card p  { font-size: 0.88rem; color: rgba(255,255,255,.72); line-height: 1.7; margin-bottom: 16px; }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: opacity .2s;
+    }
+    .sidebar-link:hover { opacity: .85; }
+    .sl-orange { background: var(--orange); color: #fff; }
+    .sl-whatsapp { background: #25d366; color: #fff; }
+    .sl-ghost { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+
+    .sidebar-card-light {
+      background: var(--grau-hell);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .sidebar-card-light h5 { font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; color: var(--blau-dunkel); }
+    .sidebar-card-light a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--blau-dunkel);
+      text-decoration: none;
+      padding: 7px 0;
+      border-bottom: 1px solid #e2eaf0;
+      transition: color .15s;
+    }
+    .sidebar-card-light a:last-child { border-bottom: none; }
+    .sidebar-card-light a:hover { color: var(--orange); }
+    .sidebar-card-light a i { color: var(--blau-mittel); font-size: 0.8rem; }
+
+    /* ── CTA BANNER ──────────────────────────────── */
+    .cta-banner {
+      background: var(--grau-hell);
+      padding: 3.5rem 0;
+      text-align: center;
+    }
+    .cta-banner h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
+    .cta-banner p  { color: #556; max-width: 480px; margin: 0 auto 24px; line-height: 1.7; }
+    .btn-primary-custom {
+      background: var(--orange); color: #fff; border: none;
+      padding: 13px 32px; border-radius: 50px;
+      font-weight: 700; font-size: 0.97rem;
+      text-decoration: none; display: inline-block;
+      transition: background .2s;
+    }
+    .btn-primary-custom:hover { background: #e07200; color: #fff; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer { background: var(--blau-dunkel); color: rgba(255,255,255,.7); padding: 3rem 0 1.5rem; font-size: 0.88rem; }
+    footer h6 { color: #fff; font-weight: 700; margin-bottom: 14px; font-size: 0.92rem; }
+    footer a  { color: rgba(255,255,255,.65); text-decoration: none; display: block; margin-bottom: 6px; }
+    footer a:hover { color: #fff; }
+    .footer-divider { border-color: rgba(255,255,255,.12); margin: 1.5rem 0 1rem; }
+    .footer-bottom { font-size: 0.8rem; opacity: .5; text-align: center; }
+
+    /* ── WHATSAPP FLOAT ──────────────────────────── */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 58px; height: 58px;
+      background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; color: #fff;
+      box-shadow: 0 4px 18px rgba(37,211,102,.45);
+      z-index: 999; text-decoration: none; transition: transform .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); color: #fff; }
+    .whatsapp-float-tooltip {
+      position: absolute; right: 68px;
+      background: #1a2e3a; color: #fff;
+      font-size: 0.8rem; font-weight: 600;
+      padding: 6px 12px; border-radius: 8px;
+      white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .whatsapp-float:hover .whatsapp-float-tooltip { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span>
+        <span class="brand-name">Andrea Büchner</span>
+        <span class="brand-sub">Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#leistungen">Angebote</a></li>
+        <li class="nav-item"><a class="nav-link" href="methoden.html">Methoden</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#ueber-mich">Über mich</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="nav-link nav-cta" href="kontakt.html">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="label">FAQ</span>
+    <h1>Häufige Fragen</h1>
+    <p>Hier finden Sie Antworten auf die Fragen, die uns am häufigsten gestellt werden. Ist Ihre Frage nicht dabei? Sprechen Sie uns einfach an.</p>
+  </div>
+</div>
+
+
+<!-- FAQ CONTENT -->
+<div class="faq-section">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- FRAGEN -->
+      <div class="col-lg-8">
+
+        <!-- KATEGORIE: ALLGEMEIN -->
+        <p class="faq-category-title"><i class="bi bi-info-circle me-2"></i>Allgemein</p>
+
+        <div class="accordion" id="faqAllgemein">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Was ist der Unterschied zwischen Lernberatung und Nachhilfe?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAllgemein">
+              <div class="accordion-body">
+                <p>Nachhilfe wiederholt und übt Schulstoff – Lernberatung geht einen Schritt weiter. Sie fragt nach dem <strong>Warum</strong>: Warum fällt Lernen schwer? Wo liegen die eigentlichen Blockaden?</p>
+                <p>In der Lernberatung wird gemeinsam herausgefunden, welche Faktoren das Lernen erschweren – sei es Konzentration, Stressreaktionen, Selbstbild oder Lernstrategie. Dann werden diese Ursachen gezielt angegangen. Das Ziel ist, dass Ihr Kind oder Sie selbst dauerhaft eigenständig und mit mehr Leichtigkeit lernen können.</p>
+                <div class="faq-hint"><i class="bi bi-lightbulb-fill"></i>Lernberatung und Nachhilfe schließen sich nicht aus – sie ergänzen sich oft sinnvoll.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Ab welchem Alter ist Lernberatung geeignet?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAllgemein">
+              <div class="accordion-body">
+                <p>Die Lernberatung ist für <strong>alle Altersgruppen</strong> geeignet:</p>
+                <ul>
+                  <li><strong>Kinder ab ca. 5–6 Jahren</strong> – z. B. bei Auffälligkeiten vor oder nach der Einschulung</li>
+                  <li><strong>Schüler aller Klassenstufen</strong> – Grundschule bis Abitur</li>
+                  <li><strong>Studenten</strong> – bei Prüfungsangst, Konzentrationsproblemen oder Motivationsverlust</li>
+                  <li><strong>Erwachsene und Führungskräfte</strong> – bei stressbedingten Blockaden, beruflicher Weiterentwicklung oder emotionalen Themen</li>
+                </ul>
+                <p>Die Methoden und der Ablauf werden jeweils altersgerecht angepasst.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Wie läuft das Erstgespräch ab?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAllgemein">
+              <div class="accordion-body">
+                <p>Das Erstgespräch dauert in der Regel <strong>ca. 60 Minuten</strong> und dient dem gegenseitigen Kennenlernen. Andrea Büchner hört zu, stellt gezielte Fragen und verschafft sich ein Bild der Situation.</p>
+                <p>Dabei werden besprochen:</p>
+                <ul>
+                  <li>Was ist die aktuelle Situation und was belastet?</li>
+                  <li>Was wurde bisher versucht?</li>
+                  <li>Welche Ziele sollen erreicht werden?</li>
+                  <li>Welche Methoden könnten geeignet sein?</li>
+                </ul>
+                <p>Am Ende des Gesprächs erhalten Sie eine klare Einschätzung und einen Vorschlag, wie eine Zusammenarbeit aussehen könnte.</p>
+                <div class="faq-hint"><i class="bi bi-telephone-fill"></i>Für Kinder unter 12 Jahren ist es sinnvoll, dass die Eltern beim Erstgespräch dabei sind.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- KATEGORIE: KOSTEN & ORGANISATION -->
+        <p class="faq-category-title mt-5"><i class="bi bi-currency-euro me-2"></i>Kosten &amp; Organisation</p>
+
+        <div class="accordion" id="faqKosten">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Was kostet eine Sitzung?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqKosten">
+              <div class="accordion-body">
+                <p>Die Kosten für eine Sitzung erfragen Sie bitte direkt bei Andrea Büchner – entweder telefonisch, per WhatsApp oder über das Kontaktformular.</p>
+                <p>Die Preise richten sich nach Art und Dauer der Sitzung sowie dem individuellen Angebot. In einem kostenlosen Erstgespräch werden alle Fragen zu Kosten und Ablauf offen besprochen.</p>
+                <div class="faq-hint"><i class="bi bi-chat-dots-fill"></i>Sprechen Sie uns an – wir finden gemeinsam eine passende Lösung.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                Wird die Lernberatung von der Krankenkasse übernommen?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqKosten">
+              <div class="accordion-body">
+                <p>Lernberatung ist eine <strong>privatwirtschaftliche Dienstleistung</strong> und wird in der Regel nicht von der gesetzlichen Krankenkasse übernommen.</p>
+                <p>Einige private Krankenkassen oder Zusatzversicherungen erstatten Teile der Kosten für Coaching- oder Präventionsleistungen. Es lohnt sich, bei Ihrer Versicherung nachzufragen. Manche Arbeitgeber übernehmen Coaching-Kosten im Rahmen von Weiterbildungsbudgets.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                Wie lange dauert eine Sitzung und wie viele werden benötigt?
+              </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqKosten">
+              <div class="accordion-body">
+                <p>Eine Sitzung dauert je nach Angebot:</p>
+                <ul>
+                  <li><strong>Lernberatung (Praxis):</strong> ca. 60 Minuten</li>
+                  <li><strong>Lernberatung (Schule/Schulprojekt):</strong> ca. 30 Minuten</li>
+                  <li><strong>wingwave®-Coaching:</strong> ca. 60–90 Minuten</li>
+                </ul>
+                <p>Die Anzahl der benötigten Sitzungen ist <strong>individuell sehr unterschiedlich</strong>. Manche Themen lassen sich in 3–5 Sitzungen lösen, andere erfordern eine längere Begleitung. Das wird im Erstgespräch realistisch eingeschätzt.</p>
+                <div class="faq-hint"><i class="bi bi-info-circle-fill"></i>wingwave® ist als Kurzzeit-Coaching konzipiert – oft reichen wenige Sitzungen für spürbare Veränderungen.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- KATEGORIE: ABLAUF & METHODEN -->
+        <p class="faq-category-title mt-5"><i class="bi bi-gear me-2"></i>Ablauf &amp; Methoden</p>
+
+        <div class="accordion" id="faqAblauf">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                Funktioniert Lernberatung auch online / per Video?
+              </button>
+            </h2>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAblauf">
+              <div class="accordion-body">
+                <p>Einige Beratungsformate sind auch online möglich, beispielsweise Erstgespräche, Coaching-Gespräche oder Elternberatung per Video.</p>
+                <p>Methoden wie BrainGym® oder die angewandte Kinesiologie setzen eine <strong>persönliche Anwesenheit</strong> voraus, da körperliche Übungen und der Muskeltest ein direktes Miteinander erfordern.</p>
+                <p>Sprechen Sie uns an – gemeinsam finden wir das Format das für Ihre Situation am besten passt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                Muss mein Kind bei der Lernberatung mitmachen wollen?
+              </button>
+            </h2>
+            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAblauf">
+              <div class="accordion-body">
+                <p>Eine gewisse Offenheit ist hilfreich – aber Kinder müssen nicht begeistert sein, um von der Lernberatung zu profitieren. Viele Kinder kommen skeptisch oder zögerlich und entwickeln erst im Laufe der Sitzungen Vertrauen und Neugier.</p>
+                <p>Andrea Büchner hat langjährige Erfahrung im Umgang mit Kindern, die dem Thema anfangs zurückhaltend gegenüberstehen. Die Methoden sind spielerisch und niedrigschwellig gestaltet – es gibt keine Tests, keine Noten, keinen Druck.</p>
+                <div class="faq-hint"><i class="bi bi-heart-fill"></i>Oft berichten Eltern, dass ihre Kinder nach der ersten Sitzung von selbst weitermachen wollten.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4">
+
+        <div class="sidebar-card">
+          <h5>Noch Fragen offen?</h5>
+          <p>Schreiben Sie uns einfach – Andrea Büchner antwortet persönlich und unkompliziert.</p>
+          <a href="kontakt.html" class="sidebar-link sl-orange">
+            <i class="bi bi-calendar-check"></i> Termin anfragen
+          </a>
+          <a href="https://wa.me/491703330630?text=Ich%20habe%20eine%20Frage%20zur%20Lernberatung." class="sidebar-link sl-whatsapp" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i> WhatsApp schreiben
+          </a>
+          <a href="tel:+491703330630" class="sidebar-link sl-ghost">
+            <i class="bi bi-telephone"></i> 0170 333 0630
+          </a>
+        </div>
+
+        <div class="sidebar-card-light">
+          <h5>Mehr erfahren</h5>
+          <a href="methoden.html#braingym"><i class="bi bi-chevron-right"></i>BrainGym® – was steckt dahinter?</a>
+          <a href="methoden.html#wingwave"><i class="bi bi-chevron-right"></i>wingwave® und Prüfungsangst</a>
+          <a href="methoden.html#kinesiologie"><i class="bi bi-chevron-right"></i>Kinesiologie &amp; BioFeedback</a>
+          <a href="methoden.html#nlp"><i class="bi bi-chevron-right"></i>NLP und Glaubenssätze</a>
+          <a href="index.html#leistungen"><i class="bi bi-chevron-right"></i>Alle Angebote im Überblick</a>
+        </div>
+
+        <div class="sidebar-card-light">
+          <h5>Häufige Themen</h5>
+          <a href="index.html#leistungen"><i class="bi bi-chevron-right"></i>LRS &amp; Legasthenie</a>
+          <a href="index.html#leistungen"><i class="bi bi-chevron-right"></i>Dyskalkulie</a>
+          <a href="index.html#leistungen"><i class="bi bi-chevron-right"></i>Prüfungsangst</a>
+          <a href="index.html#leistungen"><i class="bi bi-chevron-right"></i>Konzentrationsprobleme</a>
+          <a href="index.html#leistungen"><i class="bi bi-chevron-right"></i>Emotionale Blockaden</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Bereit für den ersten Schritt?</h2>
+    <p>Das kostenlose Erstgespräch ist unverbindlich – und oft der Beginn einer echten Veränderung.</p>
+    <a href="kontakt.html" class="btn-primary-custom">
+      <i class="bi bi-calendar-check me-2"></i>Erstgespräch anfragen
+    </a>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h6>Andrea Büchner</h6>
+        <p style="font-size:0.88rem;line-height:1.7;opacity:0.75;">Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching</p>
+        <p style="font-size:0.88rem;opacity:0.75;">
+          <i class="bi bi-geo-alt me-1"></i>Mühlweg 22, 76661 Philippsburg Ot. Rheinsheim<br>
+          <i class="bi bi-telephone me-1"></i>+49 (0) 7256 800831<br>
+          <i class="bi bi-envelope me-1"></i>kontakt@lernberatung-buechner.de
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Angebote</h6>
+        <a href="index.html#lernberatung">Lernberatung</a>
+        <a href="index.html#wingwave">wingwave-Coaching</a>
+        <a href="index.html#schulprojekt">Schulprojekt</a>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Informationen</h6>
+        <a href="methoden.html">Methoden</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#ueber-mich">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h6>Zielgruppen</h6>
+        <p style="font-size:0.85rem;opacity:0.7;line-height:1.9;">
+          LRS / Legasthenie · Dyskalkulie · Konzentrationsprobleme · Prüfungsangst · Verhaltensauffälligkeiten · Emotionale Blockaden
+        </p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-bottom">&copy; 2026 Andrea Büchner · Pädagogische Praxis für Lernberatung &amp; Kurzzeit-Coaching · Alle Rechte vorbehalten</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/491703330630?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung%20und%20w%C3%BCrde%20gerne%20mehr%20erfahren."
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp schreiben">
+  <span class="whatsapp-float-tooltip">WhatsApp schreiben</span>
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
