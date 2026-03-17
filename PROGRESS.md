@@ -25,8 +25,8 @@
 - Kommunikation: "verstehen" statt "nach Watzlawick", erste Person, "Geeignet für:" entfernt
 - "Keine Methode steht allein": erste Person
 
-**Offener Punkt:**
-- Über Mich: zwei ähnliche "Meine Arbeit verbindet..."-Absätze → klären ob alter entfernt werden soll
+**Abgeschlossen (17.03.2026 – 2. Session):**
+- Über Mich: doppelter Absatz bereinigt → finale 3-Absatz-Version committed + gepusht
 
 ---
 
