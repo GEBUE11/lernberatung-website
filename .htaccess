@@ -52,6 +52,11 @@ RedirectMatch 404 /\.git
 Options -Indexes
 
 # ============================================================
+# Sitemap
+# ============================================================
+# Sitemap: https://lernberatung-buechner.de/sitemap.xml
+
+# ============================================================
 # Fehlerseiten (optional – eigene 404-Seite möglich)
 # ============================================================
 # ErrorDocument 404 /404.html
