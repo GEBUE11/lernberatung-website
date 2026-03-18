@@ -1,5 +1,19 @@
 # Progress - Lernberatung Website
 
+## Status (18.03.2026) – ABGESCHLOSSEN
+
+**Projekt abgeschlossen. Seite ist live, Kunde zufrieden.**
+
+- DOKU.md erstellt (vollständige Projektdokumentation)
+- Kontaktformular: Honeypot + Danke-Seite + Redirect auf danke.html
+- Saubere URLs: index.html → /, alle Links aktualisiert
+- sitemap.xml erstellt, push.sh aktualisiert lastmod automatisch
+- Temp-Dateien bereinigt (htaccess-upload.txt, lernberatung-website.zip)
+- Security Note A auf securityheaders.com
+
+---
+
+
 ## Status (17.03.2026) – Security Audit & Fixes
 
 ### Erledigt heute – Sicherheit
