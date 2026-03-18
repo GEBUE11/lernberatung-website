@@ -8,6 +8,11 @@ MESSAGE=${1:-"Website aktualisiert"}
 
 cd "$(dirname "$0")"
 
+# Sitemap: lastmod auf heutiges Datum setzen
+TODAY=$(date +%Y-%m-%d)
+sed -i "s|<lastmod>.*</lastmod>|<lastmod>$TODAY</lastmod>|g" sitemap.xml
+echo "sitemap.xml aktualisiert (lastmod: $TODAY)"
+
 echo "Änderungen werden committet..."
 git add -A
 git commit -m "$MESSAGE
