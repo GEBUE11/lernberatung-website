@@ -1,0 +1,57 @@
+# ============================================================
+# Lernberatung Andrea Büchner – .htaccess Sicherheitskonfiguration
+# ============================================================
+
+# HTTPS erzwingen
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ============================================================
+# Sicherheits-Header
+# ============================================================
+
+<IfModule mod_headers.c>
+    # Verhindert Clickjacking (kein Einbetten in iframes)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Verhindert MIME-Type-Sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Referrer nur bei gleichem Ursprung vollständig senden
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # HSTS: Browser merkt sich für 1 Jahr, nur HTTPS zu verwenden
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # Content Security Policy
+    # Erklärt: Welche externen Quellen darf die Seite laden?
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'none';"
+</IfModule>
+
+# ============================================================
+# Sensible Dateien und Verzeichnisse sperren
+# ============================================================
+
+# .git-Verzeichnis komplett sperren
+RedirectMatch 404 /\.git
+
+# Sensible Dateitypen sperren
+<FilesMatch "\.(env|key|pem|p12|crt|log|sql|bak|sh|htpasswd)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Alle versteckten Dateien sperren (Punkt-Dateien wie .htaccess selbst ausgenommen)
+<FilesMatch "^\.(?!htaccess)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Verzeichnis-Auflistung deaktivieren
+Options -Indexes
+
+# ============================================================
+# Fehlerseiten (optional – eigene 404-Seite möglich)
+# ============================================================
+# ErrorDocument 404 /404.html

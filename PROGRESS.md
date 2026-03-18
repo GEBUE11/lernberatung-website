@@ -1,5 +1,31 @@
 # Progress - Lernberatung Website
 
+## Status (17.03.2026) – Security Audit & Fixes
+
+### Erledigt heute – Sicherheit
+
+**Hostinger Produktiv-Server (lernberatung-buechner.de):**
+- `.htaccess` erstellt und deployed mit:
+  - HTTPS-Weiterleitung (HTTP → HTTPS automatisch)
+  - Content Security Policy (CSP)
+  - HSTS (Browser merkt sich 1 Jahr lang nur HTTPS)
+  - X-Frame-Options, X-Content-Type-Options, Referrer-Policy
+  - .git, .env, .key, .pem und andere sensible Dateien gesperrt
+  - Verzeichnis-Auflistung deaktiviert
+- Ergebnis: **Note A auf securityheaders.com** ✓
+
+**HTML-Dateien (alle 7):**
+- Bootstrap Icons SRI-Attribut ergänzt (integrity + crossorigin)
+- Alle anderen Bootstrap-Tags hatten SRI bereits
+
+**Architektur geklärt:**
+- VPS (srv825520.hstgr.cloud) = nur Entwicklung/Vorschau, wird demnächst abgeschaltet
+- Hostinger Shared Hosting = Produktion (lernberatung-buechner.de)
+- Webserver Hostinger: LiteSpeed (unterstützt .htaccess)
+- Deploy-Weg: Hostinger hPanel Dateimanager (FTP noch nicht eingerichtet)
+
+---
+
 ## Status (17.03.2026)
 
 ### Erledigt heute – Textüberarbeitung nach Andrea's PDF-Korrekturen
